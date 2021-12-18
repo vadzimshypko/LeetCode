@@ -1,10 +1,12 @@
-﻿namespace LeetCode // Note: actual namespace depends on the project name.
+﻿namespace LeetCode
 {
     public class Launcher
     {
         public static void Main(string[] args)
         {
-            new PalindromeNumber().Run();
+            new AddTwoNumbers().RunWithDefaultArguments();
+            new TwoSum().RunWithDefaultArguments();
+            new PalindromeNumber().RunWithDefaultArguments();
         }
     }
 }
