@@ -4,9 +4,7 @@
     {
         public static void Main(string[] args)
         {
-            new AddTwoNumbers().RunWithDefaultArguments();
-            new TwoSum().RunWithDefaultArguments();
-            new PalindromeNumber().RunWithDefaultArguments();
+            new ReverseInteger().RunWithDefaultArguments();
         }
     }
 }
