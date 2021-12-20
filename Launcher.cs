@@ -4,7 +4,7 @@
     {
         public static void Main(string[] args)
         {
-            new ReverseInteger().RunWithDefaultArguments();
+            new TripletsSum().RunWithDefaultArguments();
         }
     }
 }
