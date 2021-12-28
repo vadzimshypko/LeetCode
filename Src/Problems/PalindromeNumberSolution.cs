@@ -1,21 +1,15 @@
-﻿/**
- * https://leetcode.com/problems/palindrome-number/
- */
-namespace LeetCode
+﻿namespace LeetCode.Src.Problems
 {
-    internal class PalindromeNumber : Solution
+    /*
+     * https://leetcode.com/problems/palindrome-number/
+     */
+    internal class PalindromeNumberSolution : Solution
     {
         public void Run()
         {
-            Console.WriteLine("X = ?");
+            Console.WriteLine("X=?");
             Console.WriteLine(Solve(int.Parse(Console.ReadLine())));
         }
-
-        public void RunWithDefaultArguments()
-        {
-            Console.WriteLine(Solve(121));
-        }
-
 
         private bool Solve(int x)
         {

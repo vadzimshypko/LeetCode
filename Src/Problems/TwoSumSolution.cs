@@ -1,33 +1,28 @@
-﻿/**
- * https://leetcode.com/problems/two-sum/
- */
-namespace LeetCode
+﻿namespace LeetCode.Src.Problems
 {
-    internal class TwoSum : Solution
+    /*
+     * https://leetcode.com/problems/two-sum/
+     */
+    internal class TwoSumSolution : Solution
     {
         public void Run()
         {
-            Console.WriteLine("Nums");
+            Console.WriteLine("Nums=? ? ?");
             int[] nums = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            Console.WriteLine("Target");
+            Console.WriteLine("Target=?");
             int target = int.Parse(Console.ReadLine());
 
             Solve(nums, target).ToList().ForEach(Console.WriteLine);
         }
 
-        public void RunWithDefaultArguments()
-        {
-            Solve(new int[] { 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1 }, 11).ToList().ForEach(Console.WriteLine);
-        }
-
         private int[]? Solve(int[] nums, int target)
         {
-            // value, index in array
+            // value, index in arrays
             Dictionary<int, int> metNumers = new();
 
             for (int i = 0; i < nums.Length; i++)
             {
-                if(metNumers.TryGetValue(target - nums[i], out var indexOfSecondNumber))
+                if (metNumers.TryGetValue(target - nums[i], out var indexOfSecondNumber))
                 {
                     return new int[] { i, indexOfSecondNumber };
                 }

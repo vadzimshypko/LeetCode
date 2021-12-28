@@ -1,29 +1,19 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Src.Problems
 {
-    /**
+    /*
      * https://leetcode.com/problems/3sum/
      */
-    internal class TripletsSum : Solution
+    internal class TripletsSumSolution : Solution
     {
         public void Run()
         {
-            Console.WriteLine("nums = ?");
+            Console.WriteLine("Nums=?");
             int[] nums = Console.ReadLine()
                 .Split(',')
                 .Where(str => !string.IsNullOrEmpty(str))
                 .Select(int.Parse)
                 .ToArray();
             foreach (var triplet in Solve(nums))
-            {
-                Console.WriteLine(string.Join(",", triplet));
-
-            }
-        }
-
-        public void RunWithDefaultArguments()
-        {
-            var result = Solve(new int[] { -1, 0, 1, 2, -1, -4 });
-            foreach (var triplet in result)
             {
                 Console.WriteLine(string.Join(",", triplet));
             }
@@ -57,13 +47,12 @@
             return result;
         }
 
-
-        private IList<IList<int>> SolveUsedHashSet(int[] nums)
+        private IList<IList<int>> SolveWithUseHashSet(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>();
             Array.Sort(nums);
             HashSet<int> numsSet = new(nums);
-            int lastX = int.MinValue, lastY, i, j, thirdElement; 
+            int lastX = int.MinValue, lastY, i, j, thirdElement;
             for (i = 0; i < nums.Length && nums[i] <= 0; i++)
             {
                 if (nums[i] <= lastX)
@@ -73,9 +62,9 @@
                 lastY = int.MinValue;
                 for (j = i + 1; j < nums.Length; j++)
                 {
-                    thirdElement = - (nums[i] + nums[j]);
-                    if (lastY != nums[j] && numsSet.Contains(thirdElement) && 
-                        (thirdElement > nums[j] || 
+                    thirdElement = -(nums[i] + nums[j]);
+                    if (lastY != nums[j] && numsSet.Contains(thirdElement) &&
+                        (thirdElement > nums[j] ||
                         (thirdElement == nums[j] && j + 1 < nums.Length && nums[j] == nums[j + 1])))
                     {
                         result.Add(new[] { nums[i], nums[j], thirdElement });

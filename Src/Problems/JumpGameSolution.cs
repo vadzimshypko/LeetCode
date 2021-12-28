@@ -1,20 +1,15 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Src.Problems
 {
-    /**
+    /*
      * https://leetcode.com/problems/jump-game/
      */
-    internal class JumpGame : Solution
+    internal class JumpGameSolution : Solution
     {
         public void Run()
         {
-            Console.WriteLine("nums = ?,?,?");
+            Console.WriteLine("Nums=?,?,?");
             int[] nums = Console.ReadLine().Split(",").Select(int.Parse).ToArray();
             Console.WriteLine(Solve(nums));
-        }
-
-        public void RunWithDefaultArguments()
-        {
-            Console.WriteLine(Solve(new[] { 3, 2, 1, 0, 4 }));
         }
 
         private bool Solve(int[] nums)

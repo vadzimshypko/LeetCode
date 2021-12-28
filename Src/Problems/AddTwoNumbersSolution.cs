@@ -1,11 +1,11 @@
 ﻿using System.Numerics;
 
-/**
- * https://leetcode.com/problems/add-two-numbers/
- */
-namespace LeetCode
+namespace LeetCode.Src.Problems
 {
-    internal class AddTwoNumbers : Solution
+    /*
+     * https://leetcode.com/problems/add-two-numbers/
+     */
+    internal class AddTwoNumbersSolution : Solution
     {
         public void Run()
         {
@@ -13,18 +13,10 @@ namespace LeetCode
             ListNode firstList = ConvertNumberToList(int.Parse(Console.ReadLine()));
             Console.WriteLine("Number for second list = ?");
             ListNode secondList = ConvertNumberToList(int.Parse(Console.ReadLine()));
-            Console.WriteLine(ConvertListToNumber(SolveRight(firstList, secondList)));
+            Console.WriteLine(ConvertListToNumber(Solve(firstList, secondList)));
         }
 
-        public void RunWithDefaultArguments()
-        {
-            Console.WriteLine(ConvertListToNumber(SolveRight(ConvertNumberToList(9), ConvertNumberToList(999999991))));
-        }
-
-        /**
-        * It is the best solution. 
-        */
-        private ListNode SolveRight(ListNode l1, ListNode l2)
+        internal ListNode Solve(ListNode l1, ListNode l2)
         {
             int sum = 0;
             ListNode iterationNode = null, resultNode = null;
@@ -38,7 +30,7 @@ namespace LeetCode
                 if (l2 != null)
                 {
                     sum += l2.val;
-                    l2 = l2.next; 
+                    l2 = l2.next;
                 }
                 if (iterationNode == null)
                     iterationNode = resultNode = new(sum % 10);
@@ -49,17 +41,18 @@ namespace LeetCode
             return resultNode;
         }
 
-        /**
-        * It is lazy solution using BigInteger. 
-        */
-        private ListNode SolveLazy(ListNode l1, ListNode l2)
+        /* 
+         * It is lazy solution using BigInteger.
+         */
+        internal ListNode SolveLazy(ListNode l1, ListNode l2)
         {
             BigInteger number1 = ConvertListToNumber(l1);
             BigInteger number2 = ConvertListToNumber(l2);
             return ConvertNumberToList(number1 + number2);
         }
 
-        private ListNode ConvertNumberToList(BigInteger number)
+        // Support methods.
+        internal ListNode ConvertNumberToList(BigInteger number)
         {
             ListNode currentNode = new((int)(number % 10));
             if (number / 10 != 0)
@@ -69,7 +62,7 @@ namespace LeetCode
             return currentNode;
         }
 
-        private BigInteger ConvertListToNumber(ListNode node)
+        internal BigInteger ConvertListToNumber(ListNode node)
         {
             if (node.next != null)
             {
@@ -78,10 +71,11 @@ namespace LeetCode
             return node.val;
         }
 
-        private class ListNode
+        internal class ListNode
         {
             public int val;
             public ListNode next;
+
             public ListNode(int val = 0, ListNode next = null)
             {
                 this.val = val;

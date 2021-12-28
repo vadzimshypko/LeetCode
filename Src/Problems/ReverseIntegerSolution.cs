@@ -1,27 +1,24 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Src.Problems
 {
-    /**
+    /*
      * https://leetcode.com/problems/reverse-integer/
      */
-    internal class ReverseInteger : Solution
+    internal class ReverseIntegerSolution : Solution
     {
         public void Run()
         {
-            Console.WriteLine("X = ?");
+            Console.WriteLine("X=?");
             Console.WriteLine(Solve(int.Parse(Console.ReadLine())));
         }
 
-        public void RunWithDefaultArguments()
+        internal int Solve(int x)
         {
-            Console.WriteLine(Solve(1534236469));
-        }
+            if (x == int.MinValue) return 0;
 
-        private int Solve(int x)
-        {
             bool isNegative = x < 0 ? true : false;
-            x *= isNegative ? -1 : 1;
+            x = Math.Abs(x);
             int reverseX = 0;
-            while(x != 0)
+            while (x != 0)
             {
                 if (reverseX > (int.MaxValue - x % 10) / 10)
                 {
