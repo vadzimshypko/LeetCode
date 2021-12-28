@@ -7,7 +7,7 @@
     {
         public void Run()
         {
-            Console.WriteLine("Nums=?");
+            Console.WriteLine("Nums=?,?,?");
             int[] nums = Console.ReadLine()
                 .Split(',')
                 .Where(str => !string.IsNullOrEmpty(str))
@@ -19,7 +19,7 @@
             }
         }
 
-        private IList<IList<int>> Solve(int[] nums)
+        internal IList<IList<int>> Solve(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>();
             Array.Sort(nums);
@@ -47,7 +47,7 @@
             return result;
         }
 
-        private IList<IList<int>> SolveWithUseHashSet(int[] nums)
+        internal IList<IList<int>> SolveWithUseHashSet(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>();
             Array.Sort(nums);

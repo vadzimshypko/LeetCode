@@ -11,18 +11,17 @@
             Console.WriteLine(Solve(int.Parse(Console.ReadLine())));
         }
 
-        private bool Solve(int x)
+        internal bool Solve(int x)
         {
-            if (x < 0) return false;
+            if (x < 0 || (x % 10 == 0 && x != 0)) return false;
 
-            int reverseX = 0;
-            int duplicateX = x;
-            while (duplicateX > 0)
+            int revertedX = 0;
+            while (x > revertedX)
             {
-                reverseX = reverseX * 10 + duplicateX % 10;
-                duplicateX /= 10;
+                revertedX = revertedX * 10 + x % 10;
+                x /= 10;
             }
-            return reverseX == x;
+            return revertedX == x || x == revertedX / 10;
         }
     }
 }

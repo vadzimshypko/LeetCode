@@ -12,7 +12,7 @@
             Console.WriteLine(Solve(nums));
         }
 
-        private bool Solve(int[] nums)
+        internal bool Solve(int[] nums)
         {
             int largestAvailableIndex = 0;
             int lastIndex = nums.Length - 1;

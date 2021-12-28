@@ -15,7 +15,7 @@
             Solve(nums, target).ToList().ForEach(Console.WriteLine);
         }
 
-        private int[]? Solve(int[] nums, int target)
+        internal int[]? Solve(int[] nums, int target)
         {
             // value, index in arrays
             Dictionary<int, int> metNumers = new();
