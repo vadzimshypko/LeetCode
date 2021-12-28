@@ -1,8 +1,10 @@
-﻿using NUnit.Framework;
+﻿using LeetCode.Src.Problems;
+
+using NUnit.Framework;
 
 namespace LeetCode.Tests.Problems
 {
-    internal class ReverseIntegerTests
+    internal class ReverseIntegerSolutionTests
     {
         [Test]
         public void Solve_Reverting123_Returns321()
