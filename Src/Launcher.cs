@@ -12,6 +12,7 @@ namespace LeetCode
             //new ReverseIntegerSolution().Run();
             //new TripletsSumSolution().Run();
             //new TwoSumSolution().Run();
+            //new SwapNodesInPairs().Run();
         }
     }
 }
